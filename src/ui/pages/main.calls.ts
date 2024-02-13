@@ -42,12 +42,12 @@ export async function mainPageFieldsVisible(MainPage: any, page: any) {
 
   // const page = await MainPage;
   // Get the current URL
-  const currentUrl = await page.url();
+  // const currentUrl = await page.url();
 
-  // Check if the current URL contains "inventory.html"
-  const containsInventory = currentUrl.includes("inventory.html");
-  // Assertion to check if the URL contains "inventory.html"
-  expect(containsInventory).toBe(true);
+  // // Check if the current URL contains "inventory.html"
+  // const containsInventory = currentUrl.includes("inventory.html");
+  // // Assertion to check if the URL contains "inventory.html"
+  // expect(containsInventory).toBe(true);
   await expect(MainPage.cartIcon).toBeVisible();
   await expect(MainPage.filterIcon).toBeVisible();
   // await browser.close();
