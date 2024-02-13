@@ -1,5 +1,4 @@
-import { test, expect, Page } from "@playwright/test";
-import * as dotenv from "dotenv";
+import { test } from "@playwright/test";
 import { LoginPage } from "../pages/login.page";
 import { LoginUser, loginPageErrorVisible } from "../pages/login.calls";
 import { MainPage } from "../pages/main.page";

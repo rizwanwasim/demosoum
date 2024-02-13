@@ -43,6 +43,7 @@ export class MainPage {
   readonly labsLogo: Locator;
   readonly cartIcon: Locator;
   readonly filterIcon: Locator;
+  readonly dataContainer: Locator;
 
   // const emailis = "riz@getMaxListeners.xom";
   constructor(page: Page) {
@@ -50,6 +51,7 @@ export class MainPage {
     this.labsLogo = page.getByText("Swag Labs");
     this.cartIcon = page.locator("#shopping_cart_container a");
     this.filterIcon = page.locator('[data-test="product_sort_container"]');
+    this.dataContainer = page.locator("#inventory_container").nth(1);
 
     this.dashLogo = page.getByRole("button", { name: "Logo" });
     this.dashboardHeading = page.getByRole("heading", { name: "Dashboard" });

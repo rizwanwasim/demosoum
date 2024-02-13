@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { LoginUser } from "../pages/login.calls";
 import { MainPage } from "../pages/main.page";
 import { mainPageFieldsVisible } from "../pages/main.calls";
@@ -10,6 +10,7 @@ test.describe("Main Page", () => {
     // await page.waitForTimeout(3000);
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
     await mainPageFieldsVisible(mainPage, page);
+    await expect(mainPage.dataContainer).toBeVisible();
 
     //   await mainPage.myProjectsTab.click();
   });
