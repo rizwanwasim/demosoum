@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { getLocation } from "../api_calls/api.calls";
+import { getLocation } from "../api_calls/location.api.calls";
 
 test("API Test: Verify Location GET Request", async ({ request }) => {
   // Define the API endpoint URL
