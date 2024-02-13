@@ -38,8 +38,8 @@ export async function assertProjectFormFieldsVisible(dashPage: any) {
 }
 
 export async function mainPageFieldsVisible(MainPage: any, page: any) {
+  await page.waitForTimeout(2000);
   await expect(MainPage.labsLogo).toBeVisible();
-
   // const page = await MainPage;
   // Get the current URL
   // const currentUrl = await page.url();
