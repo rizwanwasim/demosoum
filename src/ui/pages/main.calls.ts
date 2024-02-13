@@ -37,8 +37,19 @@ export async function assertProjectFormFieldsVisible(dashPage: any) {
   await expect(dashPage.projectInfoCrossButton).toBeVisible();
 }
 
-export async function mainPageFieldsVisible(MainPage: any) {
-    await expect(MainPage.labsLogo).toBeVisible();
-    await expect(MainPage.cartIcon).toBeVisible();
-    await expect(MainPage.filterIcon).toBeVisible();
-  }
+export async function mainPageFieldsVisible(MainPage: any, page: any) {
+  await expect(MainPage.labsLogo).toBeVisible();
+  await expect(MainPage.cartIcon).toBeVisible();
+  await expect(MainPage.filterIcon).toBeVisible();
+  // const page = await MainPage;
+  // Get the current URL
+  const currentUrl = await page.url();
+
+  // Check if the current URL contains "inventory.html"
+  const containsInventory = currentUrl.includes("inventory.html");
+
+  // Assertion to check if the URL contains "inventory.html"
+  expect(containsInventory).toBe(true);
+
+  // await browser.close();
+}

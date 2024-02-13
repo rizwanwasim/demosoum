@@ -21,7 +21,7 @@ test.describe("Main Page", () => {
     await page.goto("/");
     await page.waitForTimeout(3000);
     await LoginUser(page);
-    await mainPageFieldsVisible(mainPage);
+    await mainPageFieldsVisible(mainPage, page);
 
     //   await mainPage.myProjectsTab.click();
   });
