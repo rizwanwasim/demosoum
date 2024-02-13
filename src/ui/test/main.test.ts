@@ -19,7 +19,16 @@ test.describe("Main Page", () => {
     const mainPage = new MainPage(page);
     await page.goto("/");
     // await page.waitForTimeout(3000);
-    await LoginUser(page);
+    await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
+    await mainPageFieldsVisible(mainPage, page);
+
+    //   await mainPage.myProjectsTab.click();
+  });
+  test("Main Page", async ({ page }) => {
+    const mainPage = new MainPage(page);
+    await page.goto("/");
+    // await page.waitForTimeout(3000);
+    await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
     await mainPageFieldsVisible(mainPage, page);
 
     //   await mainPage.myProjectsTab.click();
