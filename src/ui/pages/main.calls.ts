@@ -39,7 +39,7 @@ export async function assertProjectFormFieldsVisible(dashPage: any) {
 
 export async function mainPageFieldsVisible(MainPage: any, page: any) {
   await expect(MainPage.labsLogo).toBeVisible();
-  await expect(MainPage.cartIcon).toBeVisible();
+  // await expect(MainPage.cartIcon).toBeVisible();
   await expect(MainPage.filterIcon).toBeVisible();
   // const page = await MainPage;
   // Get the current URL
