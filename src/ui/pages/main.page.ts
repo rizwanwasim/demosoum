@@ -40,15 +40,15 @@ export class MainPage {
   readonly viewallMyActiveProject: Locator;
   readonly selectProjectAddress: Locator;
 
-  readonly labsLogo : Locator;
-  readonly cartIcon : Locator;
+  readonly labsLogo: Locator;
+  readonly cartIcon: Locator;
   readonly filterIcon: Locator;
 
   // const emailis = "riz@getMaxListeners.xom";
   constructor(page: Page) {
     this.page = page;
-    this.labsLogo = page.getByText('Swag Labs');
-    this.cartIcon = page.locator('#shopping_cart_container a');
+    this.labsLogo = page.getByText("Swag Labs");
+    this.cartIcon = page.locator("#shopping_cart_container a");
     this.filterIcon = page.locator('[data-test="product_sort_container"]');
 
     this.dashLogo = page.getByRole("button", { name: "Logo" });
@@ -113,8 +113,8 @@ export class MainPage {
     });
     this.userTabSkipButton = page.getByRole("button", { name: "Skip" });
     this.userTabProjectCreator = page.getByLabel("Users").getByRole("listitem");
-    this.selectProjectAddress = page.getByText('RawalpindiPakistan')
-      // this.selectProjectAddress=page.locator(input["type='MuiInputBase-input'"])
+    this.selectProjectAddress = page.getByText("RawalpindiPakistan");
+    // this.selectProjectAddress=page.locator(input["type='MuiInputBase-input'"])
   }
 
   //Method to set the email input field

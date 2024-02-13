@@ -9,18 +9,13 @@ export async function LoginUser(
   password?: string
 ) {
   const loginPage = new LoginPage(page);
-  // const dashPage = new DashboardPage(page);
-  //   await page.goto("/");
-  // await page.waitForTimeout(3000);
-  //   await expect(loginPage.emailLabel).toBeVisible();
-  //   await expect(loginPage.passwordLabel).toBeVisible();
   await loginPage.username.click();
   //   await loginPage.setEmail("standard_user");
   await loginPage.setEmail(username!);
   await loginPage.password.click();
   await loginPage.setPassword(password!);
   await loginPage.login.click();
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(2000);
 
   // await dashPage.pendingInvitesIgnoreButton.click();
 }

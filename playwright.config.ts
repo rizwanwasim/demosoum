@@ -36,7 +36,7 @@ export default defineConfig({
       name: "api",
       use: {
         ...devices["Desktop Chrome"],
-        // channel: "chrome",
+        channel: "chrome",
       },
       testDir: "./src/api/tests",
     },
@@ -45,7 +45,7 @@ export default defineConfig({
       name: "ui",
       use: {
         ...devices["Desktop Chrome"],
-        // channel: "chrome",
+        channel: "chrome",
       },
       testDir: "./src/ui/tests",
     },

@@ -14,7 +14,7 @@ test.describe("Login Page", () => {
     const mainPage = new MainPage(page);
     await page.goto("/");
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
-    await page.waitForTimeout(3000);
+    // await page.waitForTimeout(3000);
     await mainPageFieldsVisible(mainPage);
   });
   test(" Login with locked User ", async ({ page }) => {
@@ -30,7 +30,7 @@ test.describe("Login Page", () => {
     const mainPage = new MainPage(page);
     await page.goto("/");
     await LoginUser(page, process.env.ERROR_USER, process.env.PASSWORD);
-    await page.waitForTimeout(3000);
+    // await page.waitForTimeout(3000);
     await mainPageFieldsVisible(mainPage);
   });
 });
