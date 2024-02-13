@@ -3,18 +3,18 @@ import { LoginPage } from "./login.page";
 // import { DashboardPage } from "../../../Buildware/pages/Dashboard/DashboardPage";
 // import { LoginPage } from "../pages/LoginPage";
 
-export async function LoginUser(page: any) {
+export async function LoginUser(page: any, username?:string, password?:string ) {
   const loginPage = new LoginPage(page);
   // const dashPage = new DashboardPage(page);
 //   await page.goto("/");
-  await page.waitForTimeout(3000);
+  // await page.waitForTimeout(3000);
 //   await expect(loginPage.emailLabel).toBeVisible();
 //   await expect(loginPage.passwordLabel).toBeVisible();
   await loginPage.username.click();
 //   await loginPage.setEmail("standard_user");
-  await loginPage.setEmail(process.env.STANDARD!);
+  await loginPage.setEmail(username!);
   await loginPage.password.click();
-  await loginPage.setPassword(process.env.PASSWORD!);
+  await loginPage.setPassword(password!);
   await loginPage.login.click();
   // await dashPage.pendingInvitesIgnoreButton.click();
 }

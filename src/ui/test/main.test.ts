@@ -16,18 +16,13 @@ import { mainPageFieldsVisible } from "../pages/main.calls";
 dotenv.config();
 
 test.describe("Main Page", () => {
-    // test("Login Page", async ({ page }) => {
-    //   await LoginUser(page);
-  
-    //   // await dashPage.pendingInvitesIgnoreButton.click();
-    // });
-    test("Navigate to Main Page", async ({ page }) => {
-      const mainPage = new MainPage(page);
-      await page.goto("/");
-      await page.waitForTimeout(3000);
-      await LoginUser(page);
-      await mainPageFieldsVisible(mainPage);
-  
+  test("Navigate to Main Page", async ({ page }) => {
+    const mainPage = new MainPage(page);
+    await page.goto("/");
+    await page.waitForTimeout(3000);
+    await LoginUser(page);
+    await mainPageFieldsVisible(mainPage);
+
     //   await mainPage.myProjectsTab.click();
-    });
+  });
 });

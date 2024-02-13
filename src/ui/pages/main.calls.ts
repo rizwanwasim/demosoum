@@ -39,11 +39,6 @@ export async function assertProjectFormFieldsVisible(dashPage: any) {
 
 export async function mainPageFieldsVisible(MainPage: any) {
     await expect(MainPage.labsLogo).toBeVisible();
-    // await expect(dashPage.siteAddressField).toBeVisible();
-    // await expect(dashPage.projectBudgetField).toBeVisible();
-    // await expect(dashPage.projectStartDateField).toBeVisible();
-    // await expect(dashPage.projectEndDateField).toBeVisible();
-    // await expect(dashPage.projectInfoCancleButton).toBeVisible();
-    // await expect(dashPage.projectInfoCreateProjectButton).toBeVisible();
-    // await expect(dashPage.projectInfoCrossButton).toBeVisible();
+    await expect(MainPage.cartIcon).toBeVisible();
+    await expect(MainPage.filterIcon).toBeVisible();
   }

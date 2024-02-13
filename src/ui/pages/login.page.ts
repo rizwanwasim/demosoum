@@ -14,6 +14,7 @@ export class LoginPage {
     readonly forgetPassButton: Locator;
     readonly labsLogo : Locator;
     readonly username: Locator;
+    readonly errorLocked : Locator;
 
     // const emailis = "riz@getMaxListeners.xom";
     constructor(page: Page) {
@@ -21,6 +22,8 @@ export class LoginPage {
         this.labsLogo = page.getByText('Swag Labs');
         this.username = page.locator('[data-test="username"]');
         this.password = page.locator('[data-test="password"]');
+
+        this.errorLocked = page.locator('[data-test="error"]');
 
         // this.forgetPassButton = page.getByRole('link', { name: 'Forgot password?' });
         // this.welcome = page.getByRole('heading', { name: 'Welcome Back' });
