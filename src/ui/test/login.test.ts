@@ -15,7 +15,15 @@ test.describe("Login Page", () => {
     await page.goto("/");
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
     // await page.waitForTimeout(3000);
-    await mainPageFieldsVisible(mainPage);
+    await mainPageFieldsVisible(mainPage, page);
+  });
+
+  test("Login with Error User ", async ({ page }) => {
+    const mainPage = new MainPage(page);
+    await page.goto("/");
+    await LoginUser(page, process.env.ERROR_USER, process.env.PASSWORD);
+    // await page.waitForTimeout(3000);
+    await mainPageFieldsVisible(mainPage, page);
   });
 
   test(" Login with locked User ", async ({ page }) => {
@@ -26,12 +34,5 @@ test.describe("Login Page", () => {
     await expect(loginPage.errorLocked).toHaveText(
       "Epic sadface: Sorry, this user has been locked out."
     );
-  });
-  test("Login with Error User ", async ({ page }) => {
-    const mainPage = new MainPage(page);
-    await page.goto("/");
-    await LoginUser(page, process.env.ERROR_USER, process.env.PASSWORD);
-    // await page.waitForTimeout(3000);
-    await mainPageFieldsVisible(mainPage);
   });
 });

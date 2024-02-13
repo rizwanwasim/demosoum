@@ -15,7 +15,7 @@ export async function LoginUser(
   await loginPage.password.click();
   await loginPage.setPassword(password!);
   await loginPage.login.click();
-  // await page.waitForTimeout(2000);
+  await page.waitForTimeout(2000);
 
   // await dashPage.pendingInvitesIgnoreButton.click();
 }
