@@ -6,7 +6,7 @@ import { MainPage } from "../pages/main.page";
 import { mainPageFieldsVisible } from "../pages/main.calls";
 
 // Load environment variables from .env file
-dotenv.config();
+// dotenv.config();
 
 test.describe("Login Page", () => {
   test(" Login Page Loaded and Signed-in Successfully ", async ({ page }) => {
@@ -15,8 +15,9 @@ test.describe("Login Page", () => {
     await page.goto("/");
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
     // await page.waitForTimeout(3000);
-    await mainPageFieldsVisible(mainPage, page);
+    await mainPageFieldsVisible(mainPage);
   });
+
   test(" Login with locked User ", async ({ page }) => {
     const loginPage = new LoginPage(page);
     await page.goto("/");
@@ -31,6 +32,6 @@ test.describe("Login Page", () => {
     await page.goto("/");
     await LoginUser(page, process.env.ERROR_USER, process.env.PASSWORD);
     // await page.waitForTimeout(3000);
-    await mainPageFieldsVisible(mainPage, page);
+    await mainPageFieldsVisible(mainPage);
   });
 });
