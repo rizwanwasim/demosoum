@@ -20,7 +20,7 @@ test.describe("Main Page", () => {
     await page.goto("/");
     // await page.waitForTimeout(3000);
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
-    await mainPageFieldsVisible(mainPage, page);
+    await mainPageFieldsVisible(mainPage);
 
     //   await mainPage.myProjectsTab.click();
   });
@@ -29,7 +29,7 @@ test.describe("Main Page", () => {
     await page.goto("/");
     // await page.waitForTimeout(3000);
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
-    await mainPageFieldsVisible(mainPage, page);
+    await mainPageFieldsVisible(mainPage);
 
     //   await mainPage.myProjectsTab.click();
   });
