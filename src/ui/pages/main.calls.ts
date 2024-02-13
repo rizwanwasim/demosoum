@@ -46,10 +46,9 @@ export async function mainPageFieldsVisible(MainPage: any, page: any) {
 
   // Check if the current URL contains "inventory.html"
   const containsInventory = currentUrl.includes("inventory.html");
-
   // Assertion to check if the URL contains "inventory.html"
   expect(containsInventory).toBe(true);
-  // await expect(MainPage.cartIcon).toBeVisible();
-  // await expect(MainPage.filterIcon).toBeVisible();
+  await expect(MainPage.cartIcon).toBeVisible();
+  await expect(MainPage.filterIcon).toBeVisible();
   // await browser.close();
 }
