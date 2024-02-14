@@ -20,7 +20,7 @@ npx playwright test
 npx playwright test --headless
 **Run Test of UI Section**
 npx playwright test --ui
-**Run Test of API Section**
+<b>Run Test of API Section</b>
 npx playwright test --api
 ```
 
