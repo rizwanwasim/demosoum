@@ -14,14 +14,14 @@ npm install -g artillery
 ### 2. Run Test
 
 ```bash
-Run All Test
+Run All Test in Headless Mode by Default
 npx playwright test
-Run Test in headless Mode
-npx playwright test --headless
+Run All Test in Headed Mode
+npx playwright test --headed
 Run Test of UI Section
 npx playwright test --ui
-Run Test of API Section
-npx playwright test --api
+To See HTML Report
+npx playwright show-report
 ```
 
 ### 3. Performance Test
