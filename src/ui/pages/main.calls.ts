@@ -95,18 +95,18 @@ export async function addProductsToCart(page, totalProducts) {
         return;
       }
 
-      console.log(`Added ${productNameText} to cart.`);
+      // console.log(`Added ${productNameText} to cart.`);
     } else {
-      console.log(`Failed to retrieve product name for product ${i}.`);
+      // console.log(`Failed to retrieve product name for product ${i}.`);
     }
   }
 }
 
 export async function getCartItemCount(mainPage: MainPage, locator) {
   // Evaluate JavaScript in the page context to get the text content of elements matched by the locator
-  console.log("here");
+  // console.log("here");
   // const mainPage = new MainPage(page);
-  console.log(await mainPage.getCartValue().textContent());
+  // console.log(await mainPage.getCartValue().textContent());
   const cartValue = await mainPage.getCartValue().textContent();
   return cartValue;
   // // page.get();
