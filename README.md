@@ -9,7 +9,6 @@ npm init playwright@latest
 npm install dotenv
 npm i zod
 npm install -g artillery
-
 ```
 
 ### 2. Run Test
