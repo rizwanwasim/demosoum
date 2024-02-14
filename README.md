@@ -8,14 +8,18 @@
 npm init playwright@latest
 npm install dotenv
 npm i zod
-```bash
+npm install -g artillery
 
-### 2. 
+```
+
+### 2.  Run Test 
 npx playwright test
-
 npx playwright test --headless
-
 npx playwright test --ui
+npx playwright test --api
+
+
+
 
 
 
