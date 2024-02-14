@@ -44,6 +44,8 @@ export class MainPage {
   readonly cartIcon: Locator;
   readonly filterIcon: Locator;
   readonly dataContainer: Locator;
+  readonly cartBadge: Locator;
+  readonly cartValue: Locator;
 
   // const emailis = "riz@getMaxListeners.xom";
   constructor(page: Page) {
@@ -52,6 +54,8 @@ export class MainPage {
     this.cartIcon = page.locator("#shopping_cart_container a");
     this.filterIcon = page.locator('[data-test="product_sort_container"]');
     this.dataContainer = page.locator("#inventory_container").nth(1);
+    this.cartBadge = page.locator(".shopping_cart_badge");
+    this.cartValue = page.locator("a").filter({ hasText: "4" });
 
     this.dashLogo = page.getByRole("button", { name: "Logo" });
     this.dashboardHeading = page.getByRole("heading", { name: "Dashboard" });
@@ -120,6 +124,9 @@ export class MainPage {
   }
 
   //Method to set the email input field
+  getCartValue(): Locator {
+    return this.cartBadge;
+  }
   async setProjectName(projectName: string) {
     if (projectName) {
       await this.projectNameField.fill(projectName);
@@ -156,4 +163,10 @@ export class MainPage {
       await this.projectEndDateField.fill(projectEndDate);
     }
   }
+
+  // async getShoppingCartBadgeText(): Promise<string> {
+  //   const element = await this.page.locator(this.cartBadge).first();
+  //   const textContent = await element.innerText();
+  //   return textContent;
+  // }
 }
