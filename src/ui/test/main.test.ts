@@ -6,6 +6,7 @@ import {
   getCartItemCount,
   mainPageFieldsVisible,
 } from "../pages/main.calls";
+import { products } from "../resource";
 
 test.describe("Main Page", () => {
   test("Navigate to Main Page", async ({ page }) => {
@@ -24,7 +25,7 @@ test.describe("Main Page", () => {
     // await page.waitForTimeout(3000);
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
     await mainPageFieldsVisible(mainPage, page);
-    const selectProducts = "4";
+    const selectProducts = products.fourProducts;
     await addProductsToCart(page, selectProducts); // Pass 'page' and total number of products as arguments
     const cartCount = await getCartItemCount(mainPage, mainPage.cartIcon);
     expect(cartCount).toBe(selectProducts);
@@ -35,8 +36,8 @@ test.describe("Main Page", () => {
     // await page.waitForTimeout(3000);
     await LoginUser(page, process.env.ERROR_USER, process.env.PASSWORD);
     await mainPageFieldsVisible(mainPage, page);
-    const selectProducts = "4";
-    const maxSelectedProducts = "2";
+    const selectProducts = products.fourProducts;
+    const maxSelectedProducts = products.twoProducts;
     await addProductsToCart(page, selectProducts); // Pass 'page' and total number of products as arguments
     const cartCount = await getCartItemCount(mainPage, mainPage.cartIcon);
     expect(cartCount).toBe(maxSelectedProducts);
