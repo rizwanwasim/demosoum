@@ -6,16 +6,17 @@
 
 ```bash
 npm init playwright@latest
+npm install dotenv
+npm i zod
+```bash
 
-
-npm init playwright@latest
-
+### 2. 
 npx playwright test
+
+npx playwright test --headless
 
 npx playwright test --ui
 
-npm install dotenv
 
-npm i zod
 
 
