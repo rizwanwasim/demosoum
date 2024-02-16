@@ -52,20 +52,6 @@ export async function mainPageFieldsVisible(MainPage: any, page: any) {
   // await browser.close();
 }
 
-// async function getTextWithDynamicValue(page, locator, dynamicValue) {
-//   // Locate the elements using the provided locator and filter based on text content
-//   const elements = await page.locator(locator).elements();
-//   const texts = await Promise.all(
-//     elements.map(async (element) => {
-//       const text = await element.innerText();
-//       return text.includes(dynamicValue) ? text : null;
-//     })
-//   );
-
-// Filter out null values and return the result
-//   return texts.filter((text) => text !== null);
-// }
-
 export async function addProductsToCart(page, totalProducts) {
   for (let i = 1; i <= totalProducts; i++) {
     // Locate the product name
@@ -94,35 +80,11 @@ export async function addProductsToCart(page, totalProducts) {
       if (i.toString() == totalProducts) {
         return;
       }
-
-      // console.log(`Added ${productNameText} to cart.`);
     } else {
       // console.log(`Failed to retrieve product name for product ${i}.`);
     }
   }
 }
-
-// export async function getCartItemCount(mainPage: MainPage, locator) {
-//   // Evaluate JavaScript in the page context to get the text content of elements matched by the locator
-//   // console.log("here");
-//   // const mainPage = new MainPage(page);
-//   // console.log(await mainPage.getCartValue().textContent());
-//   const cartValue = await mainPage.getCartValue().textContent();
-//   return cartValue;
-//   // // page.get();
-//   // const element = await page.locator(".shopping_cart_badge").first();
-//   // const textContent = await element.innerText();
-//   // console.log(textContent); // Output: 4
-
-//   // const element = await page.locator(".shopping_cart_badge").first();
-//   // const textContent = await element.innerText();
-//   // console.log(textContent); // Output: 4
-
-//   // const element = await page.locator(locator).first();
-//   // console.log(element);
-//   // const textContent = await element.textContent();
-//   // console.log(textContent);
-// }
 
 export async function cartPageFieldsVisible(CartPage: any, page: any) {
   // await MainPage.waitForTimeout(3000);
@@ -134,8 +96,6 @@ export async function cartPageFieldsVisible(CartPage: any, page: any) {
   // Assertion to check if the URL contains "inventory.html"
   expect(containsInventory).toBe(true);
   await expect(CartPage.cartIcon).toBeVisible();
-  //   await expect(CartPage.filterIcon).toBeVisible();
-  // await browser.close();
 }
 // Function to get count of remove buttons in cart page
 export async function getRemoveButtonCount(CartPage: any): Promise<number> {

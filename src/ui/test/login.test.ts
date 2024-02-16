@@ -35,13 +35,14 @@ test.describe("Login Functionality", () => {
 });
 test.describe("Logout Functionality", () => {
   test("Verify Logout Functionality", async ({ page }) => {
+    const loginPage = new LoginPage(page);
     const mainPage = new MainPage(page);
     await page.goto("/");
     // await page.waitForTimeout(3000);
-    await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
+    await LoginUser(loginPage, process.env.STANDARD, process.env.PASSWORD);
     await mainPageFieldsVisible(mainPage, page);
     await expect(mainPage.dataContainer).toBeVisible();
-    await LogoutUser(page);
+    await LogoutUser(mainPage);
     // Close the browser
     await page.close();
     // Get the current URL of the page

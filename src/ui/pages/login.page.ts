@@ -33,16 +33,8 @@ export class LoginPage {
       .filter({ hasText: /^All ItemsAboutLogoutReset App State$/ });
     this.logoutButton = page.getByRole("link", { name: "Logout" });
 
-    // this.forgetPassButton = page.getByRole('link', { name: 'Forgot password?' });
-    // this.welcome = page.getByRole('heading', { name: 'Welcome Back' });
-    // this.emailLabel = page.getByRole('heading', { name: 'Email' });
-    // this.passwordLabel = page.getByRole('heading', { name: 'Password' });
-
-    // this.email = page.getByLabel('Email');
-    // this.password = page.getByLabel('Password', { exact: true });
     this.login = page.locator('[data-test="login-button"]');
   }
-  // Method to set the email input field
   // Method to set the email input field
   async setEmail(emailValue: string) {
     if (emailValue) {
