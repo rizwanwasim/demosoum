@@ -1,10 +1,9 @@
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { getLocation } from "../api_calls/location.api.calls";
+import { ApiResponseSchema } from "../api_calls/location.domain";
 
 test("API Test: Verify Location GET Request", async ({ request }) => {
-  // Define the API endpoint URL
-  //   const apiUrl = `${process.env.API_URL}/product/?page%20number=2&size=3`;
   const response = await getLocation(request);
   const resJson = await response.json();
-  // console.log(resJson);
+  expect(() => ApiResponseSchema.parse(resJson)).not.toThrow();
 });
