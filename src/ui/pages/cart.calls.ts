@@ -1,5 +1,5 @@
-import { expect } from "@playwright/test";
-import { MainPage } from "./main.page";
+import { Page, expect } from "@playwright/test";
+import { CartPage } from "./cart.page";
 
 // export async function assertDashboardElementsVisible(dashPage: any) {
 //   // Ensure that all dashboard elements are visible
@@ -44,7 +44,7 @@ export async function mainPageFieldsVisible(MainPage: any, page: any) {
   // Get the current URL
   const currentUrl = await page.url();
   // Check if the current URL contains "inventory.html
-  const containsInventory = currentUrl.includes(process.env.INVENTORY);
+  const containsInventory = currentUrl.includes("inventory.html");
   // Assertion to check if the URL contains "inventory.html"
   expect(containsInventory).toBe(true);
   await expect(MainPage.cartIcon).toBeVisible();
@@ -102,24 +102,48 @@ export async function addProductsToCart(page, totalProducts) {
   }
 }
 
-export async function getCartItemCount(mainPage: MainPage, locator) {
-  // Evaluate JavaScript in the page context to get the text content of elements matched by the locator
-  // console.log("here");
-  // const mainPage = new MainPage(page);
-  // console.log(await mainPage.getCartValue().textContent());
-  const cartValue = await mainPage.getCartValue().textContent();
-  return cartValue;
-  // // page.get();
-  // const element = await page.locator(".shopping_cart_badge").first();
-  // const textContent = await element.innerText();
-  // console.log(textContent); // Output: 4
+// export async function getCartItemCount(mainPage: MainPage, locator) {
+//   // Evaluate JavaScript in the page context to get the text content of elements matched by the locator
+//   // console.log("here");
+//   // const mainPage = new MainPage(page);
+//   // console.log(await mainPage.getCartValue().textContent());
+//   const cartValue = await mainPage.getCartValue().textContent();
+//   return cartValue;
+//   // // page.get();
+//   // const element = await page.locator(".shopping_cart_badge").first();
+//   // const textContent = await element.innerText();
+//   // console.log(textContent); // Output: 4
 
-  // const element = await page.locator(".shopping_cart_badge").first();
-  // const textContent = await element.innerText();
-  // console.log(textContent); // Output: 4
+//   // const element = await page.locator(".shopping_cart_badge").first();
+//   // const textContent = await element.innerText();
+//   // console.log(textContent); // Output: 4
 
-  // const element = await page.locator(locator).first();
-  // console.log(element);
-  // const textContent = await element.textContent();
-  // console.log(textContent);
+//   // const element = await page.locator(locator).first();
+//   // console.log(element);
+//   // const textContent = await element.textContent();
+//   // console.log(textContent);
+// }
+
+export async function cartPageFieldsVisible(CartPage: any, page: any) {
+  // await MainPage.waitForTimeout(3000);
+  await expect(CartPage.labsLogo).toBeVisible();
+  // Get the current URL
+  const currentUrl = await page.url();
+  // Check if the current URL contains "inventory.html
+  const containsInventory = currentUrl.includes(process.env.CART);
+  // Assertion to check if the URL contains "inventory.html"
+  expect(containsInventory).toBe(true);
+  await expect(CartPage.cartIcon).toBeVisible();
+  //   await expect(CartPage.filterIcon).toBeVisible();
+  // await browser.close();
+}
+// Function to get count of remove buttons in cart page
+export async function getRemoveButtonCount(CartPage: any): Promise<number> {
+  // Constructing the selector for all remove buttons
+  const removeButtonSelector = CartPage.removeButton;
+
+  // Getting the count of remove buttons
+  const removeButtonCount = await removeButtonSelector.count();
+  //   const removeButtonsCount = removeButtonCount;
+  return removeButtonCount;
 }

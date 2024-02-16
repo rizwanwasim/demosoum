@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
 import { LoginPage } from "./login.page";
+// import { CartPage } from "./cart.page";
 // import { DashboardPage } from "../../../Buildware/pages/Dashboard/DashboardPage";
 // import { LoginPage } from "../pages/LoginPage";
 
@@ -49,4 +50,29 @@ export async function loginPageErrorVisible(loginPage: any) {
   // await expect(MainPage.cartIcon).toBeVisible();
   // await expect(MainPage.filterIcon).toBeVisible();
   // await browser.close();
+}
+export async function LogoutUser(
+  page: any
+  // username?: string,
+  // password?: string
+) {
+  // const logoutPage = new LogoutPage(page);
+  const loginPage = new LoginPage(page);
+  await loginPage.sideMenu.click();
+  expect(loginPage.sideMenu).toBeVisible();
+  await loginPage.logoutButton.click();
+  expect(loginPage.labsLogo).toBeVisible();
+  // Get the current URL of the page
+  //   await loginPage.setEmail("standard_user");
+  // await loginPage.setEmail(username!);
+  // await loginPage.password.click();
+  // await loginPage.setPassword(password!);
+  // await loginPage.login.click();
+  // Get the current URL of the page
+  const currentUrl = page.url();
+
+  // Verify the URL after logout
+  expect(currentUrl).toBe(process.env.BASE_URL);
+
+  // await dashPage.pendingInvitesIgnoreButton.click();
 }
