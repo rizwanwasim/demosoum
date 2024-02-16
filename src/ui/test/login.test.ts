@@ -42,7 +42,7 @@ test.describe("Logout Functionality", () => {
     await LoginUser(page, process.env.STANDARD, process.env.PASSWORD);
     await mainPageFieldsVisible(mainPage, page);
     await expect(mainPage.dataContainer).toBeVisible();
-    await LogoutUser(page);
+    await LogoutUser(mainPage, loginPage);
     // Close the browser
     await page.close();
     // Get the current URL of the page
