@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
 import { LoginPage } from "./login.page";
+import { MainPage } from "./main.page";
 
 export async function LoginUser(
   page: any,
@@ -24,11 +25,11 @@ export async function loginPageErrorVisible(loginPage: any) {
 }
 export async function LogoutUser(page: any) {
   // const logoutPage = new LogoutPage(page);
-  const loginPage = new LoginPage(page);
-  await loginPage.sideMenu.click();
-  expect(loginPage.sideMenu).toBeVisible();
-  await loginPage.logoutButton.click();
-  expect(loginPage.labsLogo).toBeVisible();
+  const mainPage = new MainPage(page);
+  await mainPage.sideMenu.click();
+  expect(mainPage.sideMenu).toBeVisible();
+  await mainPage.logoutButton.click();
+  expect(mainPage.labsLogo).toBeVisible();
   const currentUrl = page.url();
   // Verify the URL after logout
   expect(currentUrl).toBe(process.env.BASE_URL);
