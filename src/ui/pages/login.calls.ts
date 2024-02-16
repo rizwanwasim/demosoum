@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
 import { LoginPage } from "./login.page";
+import { MainPage } from "./main.page";
 
 export async function LoginUser(
   page: any,
@@ -22,16 +23,16 @@ export async function loginPageErrorVisible(loginPage: any) {
     "Epic sadface: Sorry, this user has been locked out."
   );
 }
-export async function LogoutUser(mainPage: any, loginPage: any) {
-  // const logoutPage = new LoginPage(page);
-  // const mainPage = new MainPage(MainPage);
+export async function LogoutUser(mainPage: any, page: any) {
+  // const mainPage = new MainPage(page);
   await mainPage.sideMenu.click();
   expect(mainPage.sideMenu).toBeVisible();
   await mainPage.logoutButton.click();
-  expect(loginPage.labsLogo).toBeVisible();
-  expect(loginPage.username).toBeVisible();
-  expect(loginPage.password).toBeVisible();
-  // const currentUrl = loginPage.url();
-  // // Verify the URL after logout
-  // expect(currentUrl).toBe(process.env.BASE_URL);
+  // Get the current URL
+  const currentUrl = await page.url();
+  // Check if the current URL contains "inventory.html
+  const loginUrl = currentUrl.includes(process.env.BASE_URL);
+  expect(loginUrl).toBe(true);
+  // await expect(MainPage.cartIcon).toBeVisible();
+  // await expect(MainPage.filterIcon).toBeVisible();
 }

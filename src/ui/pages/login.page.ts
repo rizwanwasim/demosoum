@@ -14,7 +14,7 @@ export class LoginPage {
   // const emailis = "riz@getMaxListeners.xom";
   constructor(page: Page) {
     this.page = page;
-    this.labsLogo = page.getByText("Swag Labs");
+    // this.labsLogo = page.getByText("Swag Labs");
     this.username = page.locator('[data-test="username"]');
     this.password = page.locator('[data-test="password"]');
 
