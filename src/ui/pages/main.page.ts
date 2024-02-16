@@ -93,53 +93,53 @@ export class MainPage {
     //   this.userTabProjectCreator = page.getByLabel("Users").getByRole("listitem");
     //   this.selectProjectAddress = page.getByText("RawalpindiPakistan");
     //   // this.selectProjectAddress=page.locator(input["type='MuiInputBase-input'"])
-    // }
-
-    // //Method to set the email input field
-    // getCartValue(): Locator {
-    //   return this.cartBadge;
-    // }
-    // async setProjectName(projectName: string) {
-    //   if (projectName) {
-    //     await this.projectNameField.fill(projectName);
-    //   }
-    // }
-
-    // // Method to set the password input field
-    // async setProjectSiteAddress(siteAddress: string) {
-    //   if (siteAddress) {
-    //     await this.siteAddressField.fill(siteAddress);
-    //   }
-    // }
-    // async setProjectBudget(budgetField: string) {
-    //   if (budgetField) {
-    //     await this.projectBudgetField.fill(budgetField);
-    //   }
-    // }
-
-    // // Method to set the password input field
-    // async setProjectReportingCurrencyField(reportingCurrency: string) {
-    //   if (reportingCurrency) {
-    //     await this.reportingCurrencyField.fill(reportingCurrency);
-    //   }
-    // }
-    // // Method to set the password input field
-    // async setProjectStartDate(projectStartDate: string) {
-    //   if (projectStartDate) {
-    //     await this.projectStartDateField.fill(projectStartDate);
-    //   }
-    // }
-    // // Method to set the password input field
-    // async setProjectEndDateField(projectEndDate: string) {
-    //   if (projectEndDate) {
-    //     await this.projectEndDateField.fill(projectEndDate);
-    //   }
-    // }
-
-    // async getShoppingCartBadgeText(): Promise<string> {
-    //   const element = await this.page.locator(this.cartBadge).first();
-    //   const textContent = await element.innerText();
-    //   return textContent;
-    // }
   }
+
+  //Method to set the email input field
+  getCartValue(): Locator {
+    return this.cartBadge;
+  }
+  // async setProjectName(projectName: string) {
+  //   if (projectName) {
+  //     await this.projectNameField.fill(projectName);
+  //   }
+  // }
+
+  // // Method to set the password input field
+  // async setProjectSiteAddress(siteAddress: string) {
+  //   if (siteAddress) {
+  //     await this.siteAddressField.fill(siteAddress);
+  //   }
+  // }
+  // async setProjectBudget(budgetField: string) {
+  //   if (budgetField) {
+  //     await this.projectBudgetField.fill(budgetField);
+  //   }
+  // }
+
+  // // Method to set the password input field
+  // async setProjectReportingCurrencyField(reportingCurrency: string) {
+  //   if (reportingCurrency) {
+  //     await this.reportingCurrencyField.fill(reportingCurrency);
+  //   }
+  // }
+  // // Method to set the password input field
+  // async setProjectStartDate(projectStartDate: string) {
+  //   if (projectStartDate) {
+  //     await this.projectStartDateField.fill(projectStartDate);
+  //   }
+  // }
+  // // Method to set the password input field
+  // async setProjectEndDateField(projectEndDate: string) {
+  //   if (projectEndDate) {
+  //     await this.projectEndDateField.fill(projectEndDate);
+  //   }
+  // }
+
+  // async getShoppingCartBadgeText(): Promise<string> {
+  //   const element = await this.page.locator(this.cartBadge).first();
+  //   const textContent = await element.innerText();
+  //   return textContent;
+  // }
+  // }
 }
