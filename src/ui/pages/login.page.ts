@@ -2,15 +2,8 @@ import { Page, Locator } from "@playwright/test";
 
 export class LoginPage {
   readonly page: Page;
-  //   readonly welcome: Locator;
-  //   readonly emailLabel: Locator;
-  //   readonly passwordLabel: Locator;
-  //   readonly email: Locator;
   readonly password: Locator;
   readonly login: Locator;
-  //   readonly loginText: Locator;
-  //   readonly signUpButton: Locator;
-  //   readonly forgetPassButton: Locator;
   readonly labsLogo: Locator;
   readonly username: Locator;
   readonly errorLocked: Locator;

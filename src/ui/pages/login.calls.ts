@@ -24,12 +24,12 @@ export async function loginPageErrorVisible(loginPage: any) {
   );
 }
 export async function LogoutUser(page: any) {
-  // const logoutPage = new LogoutPage(page);
+  const logoutPage = new LoginPage(page);
   const mainPage = new MainPage(page);
   await mainPage.sideMenu.click();
   expect(mainPage.sideMenu).toBeVisible();
   await mainPage.logoutButton.click();
-  expect(mainPage.labsLogo).toBeVisible();
+  expect(logoutPage.labsLogo).toBeVisible();
   const currentUrl = page.url();
   // Verify the URL after logout
   expect(currentUrl).toBe(process.env.BASE_URL);
