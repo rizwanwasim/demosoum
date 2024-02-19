@@ -32,7 +32,8 @@ scenarios:
               url: "/api-v2/rest/api/v1/product/?page%20number=5&size={{size}}"
               headers:
                 Content-Type: application/json
-        count: 1000
+
+        count: 100
   - flow:
       - set:
           size: "{{__iteration}}"
