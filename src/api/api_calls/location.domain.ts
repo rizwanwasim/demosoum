@@ -1,23 +1,5 @@
 import { z } from "zod";
 
-// const locationSchema = z.object({
-//   message: z.string(),
-//   // responseData: {
-//   //   "info": {/'
-//   //     "total": z.number(),
-//   //     "pages": z.number()
-//   //   },
-//   //   "results": [
-//   //     // This should contain an array of product objects, but it's not clear from the provided snippet.
-//   //     // Please provide more information if needed.
-//   //   ]
-//   // },
-//   // "status": "success",
-//   // "timeStamp": "2024-02-13 15:03:53",
-//   // "violations": null
-// });
-// const { z } = require("zod");
-
 const ProductImageSchema = z.array(z.string());
 
 const QuestionAnswerSchema = z.array(
@@ -136,11 +118,3 @@ export const ApiResponseSchema = z.object({
   timeStamp: z.string(),
   violations: z.nullable(z.unknown()),
 });
-
-// Example usage:
-// const data = {
-//   // your JSON data here
-// };
-
-// const parsedData = ApiResponseSchema.parse(data);
-// console.log(parsedData);
